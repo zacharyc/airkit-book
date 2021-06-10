@@ -6,8 +6,8 @@ Website: airkit-book.com
 
 * [Introduction](#intro)
 * Where to use Airkit
-* Advantages of Airkit over other platforms.
-* Journeys
+* [Advantages of Airkit over other platforms](#airkitAdvantages)
+* [Journeys](#journeys)
 * Actors
 * The Studio
 	* Builders
@@ -34,4 +34,10 @@ This book is designed for people looking to learn about Airkit. Some sections wi
 
 Testing an image 
 
-![The Console Homepage](images/image1.png)
+<!-- ![The Console Homepage](images/image1.png) -->
+
+## Where to Use Airkit {#whyUseAirkit}
+
+## Airkit Advantages {#airkitAdvantages}
+
+## Journeys {#journeys}
