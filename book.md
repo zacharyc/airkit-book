@@ -31,3 +31,7 @@ Building a book like this requires a ton of help. The Airkit platform is constan
 
 ###  Who is this book for?
 This book is designed for people looking to learn about Airkit. Some sections will be less technical than others but in order to get the more complicated concepts some front end development experience may help. 
+
+Testing an image 
+
+![The Console Homepage](images/image1.png)
