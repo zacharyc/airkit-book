@@ -1,3 +1,5 @@
+% Airkit Manual
+
 # Airkit Book
 
 Website: airkit-book.com
@@ -48,10 +50,33 @@ To understand this better, let's look at a simple WISMO (Where is my Order) appl
 
 ### Journey Identification
 
+In the example discussed above, the journey was identified by the phone number of the user calling in. Not all journeys start with a phone number. Some journeys are entirely web based. It is possible to set up custom identifiers for a journey, but without any specification, each journey has unique id. This can be found in the [Session Scope](#sessionScope) under the `id` property. The term **session_id** is commonly used to refer to this value. Session Ids are useful when running [App API](@appApi) or trying to send events to particular sessions.
+
+Journeys can also be identified by session keys. Keys can be set on a journey during the time of creation, through the [Airkit API](#airkitApi). These keys can also be used to identify the journey in Analytics as well as certain APIs.
+
+#### Journey Identification Conflicts
+
+When using an identifier, it is only possible to have one instance of the journey running at one time. This means if someone calls back into an Airkit number, should they resume the experience they were having before?
 
 Outline of journey section
+
 * Journey settings in configuration builder
 * Journey analytics
 * Journey conflicts
 * Journey Keys
 * Journey Identifiers
+
+## Builders
+
+### Connection Builder
+
+#### App APIs {#appApi}
+
+## Airscript
+
+### Variable Scopes
+
+#### Session Scope {#sessionScope}
+
+
+## Airkit API {#airkitApi}

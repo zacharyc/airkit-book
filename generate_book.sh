@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pandoc book.md -o index.html
+pandoc -s book.md -o index.html
