@@ -41,3 +41,17 @@ Testing an image
 ## Airkit Advantages {#airkitAdvantages}
 
 ## Journeys {#journeys}
+
+As Airkit is built around dealing with the last mile of customer experiences, Airkit calls this last mile experience for each customer a "Journey." Each customer who uses your app will go through a journey. Journeys contain stateful information that is persisted across the different channels of web, text, and voice. Journeys even have their own variables and state stored in the session namespace.
+
+To understand this better, let's look at a simple WISMO (Where is my Order) application, like the Digital Self Service example on the Airkit website. In the example, the user calls into a company to track their subscription to a coffee bean company. Each Journey needs to have a unique identifier. When I user starts a Journey with a phone call, the default journey identifier is the phone number of the user.
+
+### Journey Identification
+
+
+Outline of journey section
+* Journey settings in configuration builder
+* Journey analytics
+* Journey conflicts
+* Journey Keys
+* Journey Identifiers
