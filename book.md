@@ -193,7 +193,15 @@ Datastores are collections of AirData Tables of information. They are unique to 
 
 ### Resources
 
+The resources tab in console is where you connect external resources like phone numbers, and websites. These resources can be used for different deployments of your applications. In order for a resource to be connected to your applications.
 
+### Types of Resources
+
+* Phone Numbers - can be used for voice and text messages.
+* Domains - domains are the base of launch triggers.
+* Routes - Using existing domains to define triggers for APIs.
+
+Resources are similar to integrations but are used for these specific use cases. It is required to have an integration with a phone provider like Twilio to set up phone numbers.
 
 ### API
 
