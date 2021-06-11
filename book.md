@@ -191,6 +191,24 @@ Datastores are collections of AirData Tables of information. They are unique to 
 
 ### Integrations
 
+Integrations is where one configures connections from the organization to the external sources of data. Integrations consist of an adapter, or piece of code that lives on the airkit system for connecting to an external system, and credentials, also known as Connected Accounts.
+
+#### Connected Accounts
+
+Each connected account represents a set of credentials to access an external set of data. There are many integrations, like Salesforce and Stripe that are built into the standard Airkit Deployment. These connected accounts can be used to create Connections in [Connection Builder](#connectionBuilder) that retrieves or sends data to these connected accounts. 
+
+#### Custom Integrations
+
+While Airkit comes with a bunch of built in integrations, it is possible to integrate with additional resources using custom integrations. The process of using a custom integration is first defining what the integration should look like in the custom integrations section and then adding a credential for the integration in the Connected Accounts section.
+
+Currently supported custom integrations are:
+
+* _OAuth 2.0_ Use OAuth and configure all the needed properties.
+* _API Token_ Standard API token implementation.
+* _HTTP Basic Auth_ Basic Username and password HTTP Auth.
+* _Custom Token_ Specify a custom interface with a token.
+* _SFTP_ Specify a username and password or private key for authentication.
+
 ### Resources
 
 The resources tab in console is where you connect external resources like phone numbers, and websites. These resources can be used for different deployments of your applications. In order for a resource to be connected to your applications.
@@ -251,11 +269,15 @@ See [User Roles](#userRoles) for more information about the different types of r
 
 #### Organization
 
-This section under settings is used to modify organization settings. You can see the organizations name, adjust the Authenticaiton properties on the organization as well as modify white label settings.
+This section under settings is used to modify organization settings. You can see the organizations name, adjust the Authentication properties on the organization as well as modify white label settings.
 
 #### SAML
 
 Use this section to upload SAML file specifications for additional forms of logging into an app.
+
+#### Notifiers
+
+Specify Organization level notifications to go to specified people by email or phone.
 
 ## Builders {#builders}
 
