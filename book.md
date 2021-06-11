@@ -223,6 +223,12 @@ Webhooks are used to create datasources and resources in your organization. They
 
 ### Settings
 
+Settings is the section of the console used to manage the users and authentication in your organization.
+
+#### Users
+
+This is a list of active users in the organization.
+
 ## Builders {#builders}
 
 
