@@ -205,6 +205,22 @@ Resources are similar to integrations but are used for these specific use cases.
 
 ### API
 
+The API sections is where to configure external integrations into your Airkit app. If an external integration requires a web token, you can create one for your Organization under the API section. These tokens can then be used to reference your applications.
+
+#### Tokens
+
+TODO: More info here.
+
+To create a token, click the new button on the top right and give it a name. The token will be displayed only at the time of creation. You will be able to use this token when connecting between external resources and Airkit with the [Airkit Public API](#airkitPublicApi). It is also possible to connect multiple Airkit Apps together in this fashion.
+
+While it is still possible to use the API, it is more common to use standard App APIs now.
+
+#### Webhooks
+
+TODO: More info here.
+
+Webhooks are used to create datasources and resources in your organization. They can be configured through this section.
+
 ### Settings
 
 ## Builders {#builders}
