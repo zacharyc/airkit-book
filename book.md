@@ -219,7 +219,7 @@ While it is still possible to use the API, it is more common to use standard App
 
 TODO: More info here.
 
-Webhooks are used to create datasources and resources in your organization. They can be configured through this section.
+Web hooks are used to create datasources and resources in your organization. They can be configured through this section.
 
 ### Settings
 
@@ -227,15 +227,35 @@ Settings is the section of the console used to manage the users and authenticati
 
 #### Users
 
-This is a list of active users in the organization. Each user has login information and a role.
+This is a list of active users in the organization. Each user has login information and a role. To update a user's role or information, or to delete a user. Select the user and deal perform your operations in the inspector on the right.
 
-##### User Roles
+##### User Roles {#userRoles}
 
 Different User roles have access to different parts of the Airkit Interface.
 
 * _Agent_ This role is for people who will have the most minimal access to your organization.
 * _Developer_ This role is for people who have access to build out applications in Airkit.
 * _Owner_ This role is the person with the most control over the configuration of the organization. Ability to add resources and deployments and connect accounts.
+
+##### User Variables
+
+TODO: 
+
+* User Variables and portals.
+
+#### Invites
+
+The way to add a new user to an Organization is through the Invites Tab. Creating an invite can be done with the New button in the top right. Selecting the _SSO Only_ checkbox will use the user's OAuth credentials (defined in the SAML section) to log in. Otherwise you will assign a username and the user will get to set a password when logging in.
+
+See [User Roles](#userRoles) for more information about the different types of roles.
+
+#### Organization
+
+This section under settings is used to modify organization settings. You can see the organizations name, adjust the Authenticaiton properties on the organization as well as modify white label settings.
+
+#### SAML
+
+Use this section to upload SAML file specifications for additional forms of logging into an app.
 
 ## Builders {#builders}
 
