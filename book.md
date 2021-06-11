@@ -7,7 +7,7 @@ Website: airkit-book.com
 ## ROUGH TOC
 
 * [Introduction](#intro)
-* Where to use Airkit
+* [Where to use Airkit](#whyUseAirkit)
 * [Advantages of Airkit over other platforms](#airkitAdvantages)
 * [Journeys](#journeys)
 * [Actors](#actors)
@@ -79,6 +79,58 @@ Some examples of Airkit customers:
 
 ## Airkit Advantages {#airkitAdvantages}
 
+Airkit is different from every other competitor and building in house because:
+
+* _Purpose Built_ Deliver 10x faster with 50+ reusable components
+* _Connected_ Easily integrate with any system, out of the box or custom
+* _Everywhere_ Orchestrate interactions across any channel, mobile, desktop, embeddables
+* _Insights_ Click by click reporting to rapidly iterate and optimize
+* _Reusability_ Templatize and standardize your digital experience
+* _Enterprise Grade_ Security and scalability trusted by Fortune 50
+
+### Internal Development vs. Airkit
+
+* Reusability of templates allow you to accelerate development
+* Omnichannel engagement (SMS, email, bots, voice)
+* Modern integration framework 
+* Time to build vs. in-house Engineering team - 20-30x faster (weeks vs. months/quarters)
+
+### Low Code vs. No Code
+
+* Airkit is a Low Code platform. 
+* Low Code → accelerate developer/builder productivity 
+* No Code → enable citizen developers
+
+Low Code is better than No code because it allows for flexibility to fit many use cases, rather than very few pre built use cases. Low Code requires having a technical owner, which can create startup friction, but provides long term value.
+
+
+#### Legacy Low Code Vs. Airkit (PowerApps, Outsystems, Appian, PegaSystems, Mendix)
+Traditional Low Code applications were built for monolithic, internal enterprise applications. Some common examples:
+
+* Field sales application to enter an order
+* Internal team dashboards
+* Long term portals for internal / customer logins
+
+**Why Airkit?**
+
+* Purpose built for episodic customer journeys
+* Omnichannel engagement (SMS, email, bots, voice)
+* Better developer experience
+* Modern integration framework
+
+#### No Code (Unqork, EasySend)
+
+No Code platforms are built for the citizen developer. In theory, anyone can point and click to build an app from scratch without requiring any coding.
+
+**Why Airkit?**
+
+* No Code is inherently limiting
+* Future proofing is not possible
+* Citizen developers can be scary for Enterprise organizations
+
+![](images/ref2.png)
+
+![](images/ref3.png)
 
 ## Journeys {#journeys}
 
@@ -136,6 +188,16 @@ These options include
 ### Datastores
 
 Datastores are collections of AirData Tables of information. They are unique to your organization. Clicking on a Datastore will show the available AirData tables. Selecting a table from the list, will show which apps are using the data. Using this information it is possible to share custom data objects between different applications in your organization.
+
+### Integrations
+
+### Resources
+
+
+
+### API
+
+### Settings
 
 ## Builders {#builders}
 
