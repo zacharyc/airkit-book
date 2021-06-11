@@ -189,7 +189,7 @@ These options include
 
 Datastores are collections of AirData Tables of information. They are unique to your organization. Clicking on a Datastore will show the available AirData tables. Selecting a table from the list, will show which apps are using the data. Using this information it is possible to share custom data objects between different applications in your organization.
 
-### Integrations
+### Integrations {#consoleIntegrations}
 
 Integrations is where one configures connections from the organization to the external sources of data. Integrations consist of an adapter, or piece of code that lives on the airkit system for connecting to an external system, and credentials, also known as Connected Accounts.
 
@@ -376,11 +376,213 @@ In the video below we walk you through setting up a simple app to create a Zende
 
 [Zendesk Integration Video](https://youtu.be/AyfN2XT4ycc)
 
+### Skip the Dishes Integration with Salesforce: 
+
+SkipTheDishes integrates with Salesforce to keep track of digital onboarding journeys. 
+
+SkipTheDishes, also referred to as Skip, coordinates meal delivery by connecting would-be diners with over twenty-seven thousand restaurants across Canada. Like many companies in this space, demand for their services rapidly expanded when COVID-19 hit, but they found themselves constrained by the lengthy sign-up flow restaurants needed to go through in order to work with Skip. 
+
+Restaurant managers and owners work in the fast-paced, often unpredictable world of foodservice. Every moment counts, and there’s rarely a large enough block of uninterrupted time to complete a lengthy onboarding process in one fell swoop, particularly if said onboarding process is inefficient or unclear. Skip had always taken pains to make this process as simple for restaurant managers as possible, and this meant painstaking manual intervention: the team at Skip would regularly sort through different CRMs and databases in order to form a complete picture of where each restaurant was in their onboarding process, follow-up up appropriately, and and provide each customer with a tailored experience. With the spike in demand, however, the team at Skip quickly found themselves overwhelmed. They needed to find a way to maintain their personalized onboarding experience without requiring such high levels of manual research and intervention. 
+
+Skip’s solution was to invest in a user-friendly, omnichannel way for restaurants to join their platform using Airkit. Via Airkit’s out-of-the-box Salesforce Integration, Skip built an onboarding app (capable of interfacing with restaurants via both web app and SMS) that connects restaurants’ onboarding information to Skip’s own Salesforce instance, automatically organizing each restaurants’ onboarding information in one place. This allows Skip’s sales team to keep track of where restaurants are in their journey and follow up as needed-and through Airkit, even some of this follow-up process was able to be automated. It’s fast and simple to set up Airkit  apps to read data from an external system in a recurring fashion and take actions-such as sending text or e-mail -accordingly. It’s through a combination of automatic updates and easily-tracked records on Salesforce that Skip now keeps its partners and sales teams in the loop throughout their onboarding processes. 
+
+Perhaps most importantly, all of this was built out in a matter of months-Skip finalized their spec in May 2020, and their app was deployed the next month. Airkit’s out-of-the-box tools provide the power to rapidly streamline not only the integration of third-party systems, but their operations as well. 
+
+
+
 ## Airscript
+
+Airscript is our own proprietary programming language used for working with data in many places in [The Studio](#studio). It is a language designed around the basics of working with data similar to excel functions.
+
+### Query Expressions
+
+Airscript includes some LINQ like syntax that allows you to operate on lists of items. This syntax looks somewhat similar to SQL but is based on a concept called Language Integrated Query ([LINQ](https://en.wikipedia.org/wiki/Language_Integrated_Query)).
+
+Using this syntax you can filter or map a list of items.
+
+The general syntax looks like the following:
+
+```sql
+FROM 
+  item 
+IN 
+  collection 
+WHERE 
+  item.score > 80 
+SELECT 
+  item
+```
+
+In this simple example we go through a collection and filter out all items that have a score property greater than 80.
+
+These expressions can be nested so you can complex things like:
+
+```sql
+FROM
+  qualifiedPerson
+IN
+  FROM
+	person
+  IN
+	collectionOfPoeple
+  WHERE
+	person.qualified = true
+  SELECT
+	person
+WHERE
+  qualifiedPerson.score > 80
+SELECT
+  qualifiedPerson
+```
+
+In this example we are pulling only qualified people out of a collection of people and then looking for people in that collection that have a score greater than 80.
+
+Any valid Airscript function is valid within our syntax
+
+```sql
+FROM
+  p
+IN
+  persons
+WHERE
+  STRING_FIND(p.name, "Bob") >= 0
+SELECT
+  p.name
+```
+
+This example is going through all persons and finding all persons who have a name that contains Bob in it. Then we are returning the name of those persons. This will return as a list of `p.name`
+
+While this is the basic example of our syntax here, we have even more functionality baked into our syntax. The supported technical arguments are:
+
+```sql
+FROM 
+	itemBinding = identifier, 
+  [ indexBinding = identifier, [ collectionBinding = identifier ] ]
+IN 
+	expression 
+[WHERE expression]
+[ORDER_BY expression direction = (ASC | DESC)]
+[LIMIT expression [OFFSET expression]]
+SELECT [DISTINCT] selectExpression
+```
+
+Anything in [] means that it is optional. So we do not need to have a WHERE clause (even though my examples all have them). There is also an ORDER_BY clause and a LIMIT option. Also if you want your result to return only unique items you can put the distinct modifier on your select and you receive a SET with duplicate items removed instead of the array with multiples present.
+
+One other important  note: there is an index binding, meaning that you can can also get the index of the item you are at in your iteration. For example:
+
+```sql
+FROM
+  item, index
+IN
+  [{"foo": "bar"}, {"foo": "baz"}]
+SELECT
+  {"{{index}}": item}
+```
+
+In this case index is a special reserved word that you put the end of your expression and you can then refer to it in the rest of your statement. The result will be:
+
+```
+[
+  {
+	"0": {
+	  "foo": "bar"
+	}
+  },
+  {
+	"1": {
+	  "foo": "baz"
+	}
+  }
+]
+```
+
+This syntax, combined with the full arrangement of Airscript functions has proven to be very helpful in the applications we have already built.
 
 ### Variable Scopes
 
-#### Session Scope {#sessionScope}
+In the studio and throughout your app, there are various different namespaces or scopes. This is a way of qualifying access to particular variables throughout your experience. The general best practice is to restrict your variable to least level of access you need in order to make your experience work. We will talk more about that below.
 
+Some namespaces are editable and others are set at the beginning of the experience and cannot be modified.
+
+#### High Level Scopes
+
+On each journey there are some high level scopes:
+
+_Session_ - Contains start parameters and session level variables.
+
+_Profile_ - contains profile level configuration variables.
+
+_Theme_ - contains theme level configuration.
+
+_Activities_ - contains a list of all loaded activities.
+
+_ActivityGroups_ - contains a list of all loaded activity groups.
+
+_Configuration_ - Contains app specific configuration values.
+
+Many of these high level scopes are used for app configuration and not really meant to be modified within your experience. The one main exception is Session where we can store variables that are able to accessed on any card, card view, bot, or event.
+
+Note: While both Configuration and Profile scopes are modified in the configuration builder. The Configuration scope contains information about resources while Profile contains variables at the profile level.
+
+#### Defining Session Level Variables
+
+In the context of our apps, the term session and journey are interchangeable. Session or Journey level variables are set in the Journey builder. If you don’t see the Journey section on the right click anywhere on the stage.
+
+![](/images/airscript/scopes.png)
+
+Under variables you can click the plus and add session level variables. These variables will be available most places throughout the app, but remember they are not accessible within connection builder (you would need to pass them into a connection).
+
+#### Working With Scopes Within Your Card Views
+When working within your Cards and Card Views, you might want to create variables to store values throughout your application. In general the flow of the variable scoping looks like this:
+
+* Session (Journey) - accessible Everywhere.
+	* Activity Group (Web Flow)- accessible to all web flows within the activity group.
+		* Activity (Web Page) - accessible only on the on the current web page.
+
+![](/images/airscript/scopes2.png)
+
+As mentioned above, the general best practice is to try to store you variables at the lowest scope. This will ensure the highest level of reusability of your web pages and web flows.
+
+See types for information selecting the correct variable type.
+
+To access a variable in a particular scope, for example in creating the text for a label, you put in the *scope.variableName* in the expression editor.
+
+![](/images/airscript/scopes3.png)
+
+#### Working With Scopes Within Events
+
+Events have their own scope as they do not exist within the context of a particular card. You can set variables on events by selected the Event Source in Journey Builder and adding variables. When you fire an event you can pass in values to the variable.
+
+![](/images/airscript/scopes4.png)
+
+#### Working With Scopes Within Custom Controls
+
+When building custom controls, you are able to define what inputs or data is available to the control. During the design of your custom control, any defined inputs will be available on the control context. For example, if your custom control has an input named title, then control.title is how you’d reference that variable within the control.
+
+As you implement your custom control, you can pull variables from the session, activityGroup, or activity contexts.
+
+#### Working With Scopes Within Connections
+
+Connections exist as independent steps. They have access to all the inputs passed in but do not have access to things like session, even if they are run from a session. Also, future data operations have access to all the outputs created by previous data operations. This means that if you create a transform in the first step. You can still access the return value of that transform in the 5th step without having to do anything special.
+
+#### Profile Variables
+
+Your app can contain different profiles. Each profile has a unique set of values and resources associated with them. Talking about profiles in general is a whole different topic, but let's talk about how to create a profile level variable and modify it.
+
+Go to Journey Builder and start like you would be creating a session level variable.
+
+![](/images/airscript/scopes5.png)
+
+Once you have the variable created, right click on it. Select Convert To Setting from the dropdown.
+
+![](/images/airscript/scopes6.png)
+
+The little symbol next to the variable name indicates that it is a profile level variable. Once you’ve set it to a profile variable, we can adjust the value of the profile variable in Configuration Builder. Scroll down the bottom until you see App Settings, you can insert a value in the value section.
+
+![](/images/airscript/scopes7.png)
+
+You can change the value of configVar for each different app profile. You can then use this variable throughout your cards as profile.configVar. Profile variables have the same access restrictions as session level variables.
+
+#### Session Scope {#sessionScope}
 
 ## Airkit API {#airkitApi}
