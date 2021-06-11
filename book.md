@@ -227,7 +227,15 @@ Settings is the section of the console used to manage the users and authenticati
 
 #### Users
 
-This is a list of active users in the organization.
+This is a list of active users in the organization. Each user has login information and a role.
+
+##### User Roles
+
+Different User roles have access to different parts of the Airkit Interface.
+
+* _Agent_ This role is for people who will have the most minimal access to your organization.
+* _Developer_ This role is for people who have access to build out applications in Airkit.
+* _Owner_ This role is the person with the most control over the configuration of the organization. Ability to add resources and deployments and connect accounts.
 
 ## Builders {#builders}
 
