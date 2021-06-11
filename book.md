@@ -17,7 +17,7 @@ Website: airkit-book.com
 * [Builders](#builders)
 * Deployments
 * Resources
-* Integrations
+* [Integrations](#integrations)
 * Journey Builder
 * App Builder
 	* Components
@@ -357,6 +357,24 @@ In the Action Editor you will be able to see all the configurations of the selec
 	* Metric: Start Timer - Create a timed metric and start it
 	* Metric: Stop Timer - Stop a timer and record the time
 	* Log Custom Event - Used to log a custom event with an Airscript expression
+
+## Integrations {#integrations}
+
+Airkit makes it easy to integrate your APIs and other systems with your applications. With all of your favorite platforms so accessible, you can consolidate existing processes as well as seamlessly combine different platforms’ functionalities in novel ways. Some of the most prevalent platforms, including Google, Zendesk, Salesforce, Stripe, and Twilio, come with streamlined connections pre-built into every application, but you’re not at all limited to the commonplace integrations. It’s possible to connect your Airkit apps to just about any system or external data source you like, whether you’re authenticating via OAuth, an API token, HTTP Basic Auth, a custom token, or SFTP. 
+
+Airkit provides the ability to connect to your data, either through built in integrations such as Salesforce, or other external systems through custom integrations. These integrations enable users to query or transform data from events within an Airkit application and send data to your existing systems. For example, if you are looking to create an application to capture information for a support ticket, you can push data from Airkit to Zendesk or any other external systems you are able to set up an integration with. These integrations are extremely useful when looking to extend the capabilities of platforms that you already use today. Below are some guides on how to get started with connecting to your external systems. 
+
+### Zendesk Integration: 
+
+In the video below we walk you through setting up a simple app to create a Zendesk. In this video you will learn:
+
+* How to create a simple form for gathering information from your customer
+* How to create a web view with multiple card states
+* How to use card level variables 
+* Create a basic Zendesk ticket creation connection
+* Hook the connection up to your submit button
+
+[Zendesk Integration Video](https://youtu.be/AyfN2XT4ycc)
 
 ## Airscript
 
