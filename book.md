@@ -77,7 +77,6 @@ Some examples of Airkit customers:
 * 2X number of partners onboarded per month
 * First Republic Bank “Our first app probably would have taken our team at least a couple of months to build on our own. With Airkit, we did it within 3 weeks.”
 
-
 ## Airkit Advantages {#airkitAdvantages}
 
 
@@ -119,6 +118,24 @@ Airkit Studio is the interface in which every detail of your Airkit apps can be 
 ## The Console {#console}
 
 The console is an Organization based interface for managing Apps, Resources, Deployments and Users. Not all user roles have the same level of access to console. If you need to access a part that is mentioned here, please talk to your organization administrator.
+
+### Apps
+
+Apps in console are a list of all the Apps in your organization. If an app is deployed and there is a launch trigger, it will appear next to the item. Select an Item in the App List to see the detailed information on it and launch it in [Studio](#studio).
+
+![](images/console/app-selected.png)
+
+These options include
+
+* Edit in Studio - for opening the app in studio.
+* Branches - see the branches for version control (advanced feature).
+* Deployments - see the active deployments of the app.
+* Reports - see all the reports that have been set up on the app.
+* Activity - see a session log of all the sessions on the app.
+
+### Datastores
+
+Datastores are collections of AirData Tables of information. They are unique to your organization. Clicking on a Datastore will show the available AirData tables. Selecting a table from the list, will show which apps are using the data. Using this information it is possible to share custom data objects between different applications in your organization.
 
 ## Builders {#builders}
 
