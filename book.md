@@ -358,6 +358,10 @@ In the Action Editor you will be able to see all the configurations of the selec
 	* Metric: Stop Timer - Stop a timer and record the time
 	* Log Custom Event - Used to log a custom event with an Airscript expression
 
+## Deployments
+
+For users to be able to use your Application, it must be deployed. You create this access by creating Deployments. 
+
 ## Integrations {#integrations}
 
 Airkit makes it easy to integrate your APIs and other systems with your applications. With all of your favorite platforms so accessible, you can consolidate existing processes as well as seamlessly combine different platforms’ functionalities in novel ways. Some of the most prevalent platforms, including Google, Zendesk, Salesforce, Stripe, and Twilio, come with streamlined connections pre-built into every application, but you’re not at all limited to the commonplace integrations. It’s possible to connect your Airkit apps to just about any system or external data source you like, whether you’re authenticating via OAuth, an API token, HTTP Basic Auth, a custom token, or SFTP. 
