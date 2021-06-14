@@ -396,7 +396,7 @@ Perhaps most importantly, all of this was built out in a matter of months-Skip f
 
 ## Airscript
 
-Airscript is our own proprietary programming language used for working with data in many places in [The Studio](#studio). It is a language designed around the basics of working with data similar to excel functions.
+Airscript is our own proprietary programming language used for working with data in many places in [The Studio](#studio). It is a language designed around the basics of working with data similar to excel functions. The power of Airscript is really in the function library. A list of all supported functions can be found on the support website's, [Airscript Functions](https://support.airkit.com/hc/en-us/sections/1500000495582-Airscript-Functions).
 
 ### Query Expressions
 
