@@ -15,7 +15,7 @@ Website: airkit-book.com
 * [The Studio](#studio)
 * [The Console](#console)
 * [Builders](#builders)
-* Deployments
+* [Deployments](#deployments)
 * Resources
 * [Integrations](#integrations)
 * Journey Builder
@@ -181,7 +181,7 @@ These options include
 
 * Edit in Studio - for opening the app in studio.
 * Branches - see the branches for version control (advanced feature).
-* Deployments - see the active deployments of the app.
+* [Deployments](#deployments) - see the active deployments of the app.
 * Reports - see all the reports that have been set up on the app.
 * Activity - see a session log of all the sessions on the app.
 
@@ -358,9 +358,13 @@ In the Action Editor you will be able to see all the configurations of the selec
 	* Metric: Stop Timer - Stop a timer and record the time
 	* Log Custom Event - Used to log a custom event with an Airscript expression
 
-## Deployments
+## Deployments {#deployments}
 
-For users to be able to use your Application, it must be deployed. You create this access by creating Deployments. 
+For users to be able to use your Application, it must be deployed. You create this access by creating Deployments. It is possible to deploy your application multiple times to create different environments for testing and production. Because resources are tied to actions within the application, each deployment will require all the relevant resources for EACH deployment. For example, if an app sends text messages, it will require a different phone number for each active deployment.
+
+### Viewing Deployments in Console
+
+
 
 ## Integrations {#integrations}
 
